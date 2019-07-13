@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun_a(x,y) {
+            alert(x + " ; " + y);
+        }
+
+        var name = prompt('Name ');
+        var family = prompt('Family ');
+        var start = "fun_a('"+name+"', '"+family+"')";
+        setInterval(start, 2000);
+    </script>
+</body>
+</html>
