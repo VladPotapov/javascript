@@ -4,18 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function fun_a(x,y) {
-            alert(x + " ; " + y);
-        }
+        <div class="container"><div class="row">
+        <!--style отвечает за цвет и размер -->
+        <h1 style="color:black;font-size: 25px;" class="text-center typewrite" data-period="1000" data-type='[ "Виталий помогите убрать бокс лишний.", "который отображается с низу.", "ну и проверьте мб тут что лишнее понаписано вкоде а то какой то он большой слишком." ]'><span class="wrap"></span></h1>
 
-        var name = prompt('Name ');
-        var family = prompt('Family ');
-        var start = "fun_a('"+name+"', '"+family+"')";
-        setInterval(start, 2000);
-    </script>
+        <span class="span"></span>
+        
+        
+        </div>
+    </div>
+        
+        <script>
+        var TxtType = function(el, toRotate, period) {
+         this.toRotate = toRotate;
+         this.el = el;
+         this.loopNum = 0;
+         this.period = parseInt(period, 10) || 2000;
+         this.txt = '';
+         this.tick();
+         this.isDeleting = false;
+         };
+        
+         TxtType.prototype.tick = function() {
+         var i = this.loopNum % this.toRotate.length;
+         var fullTxt = this.toRotate[i];
+        
+         if (this.isDeleting) {
+         this.txt = fullTxt.substring(0, this.txt.length - 1);
+         } else {
+         this.txt = fullTxt.substring(0, this.txt.length + 1);
+         }
+        
+         this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        
+         var that = this;
+         /*скорость печати */
+         var delta = 200 - Math.random() * 100;
+        
+         if (this.isDeleting) { delta /= 2; }
+        
+         if (!this.isDeleting && this.txt === fullTxt) {
+         delta = this.period;
+         this.isDeleting = true;
+         } else if (this.isDeleting && this.txt === '') {
+         this.isDeleting = false;
+         this.loopNum++;
+         /*печатать новую строчку через 500мл*/
+         delta = 500;
+         }
+        
+         setTimeout(function() {
+         that.tick();
+         }, delta);
+         };
+        
+         window.onload = function() {
+         var elements = document.getElementsByClassName('typewrite');
+         for (var i=0; i<elements.length; i++) {
+         var toRotate = elements[i].getAttribute('data-type');
+         var period = elements[i].getAttribute('data-period');
+         if (toRotate) {
+         new TxtType(elements[i], JSON.parse(toRotate), period);
+         }
+         }
+         // INJECT CSS
+         var css = document.createElement("style");
+         css.type = "text/css";
+         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #111}";
+         document.body.appendChild(css);
+         };
+        </script>
 </body>
 </html>
