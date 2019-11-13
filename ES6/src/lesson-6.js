@@ -29,10 +29,30 @@ function greet3(greeting = 'Hello', name = 'friend') {
 
 greet3();
 
-function sum() {
-    console.log(arguments);
-    console.log(arguments instanceof Array);    //false (не массив)
-    Array.prototype.forEach.call(arguments, function(value) {});
+function summ() {
+    console.log(arguments instanceof Array);
+    var sum = 0;
+    Array.prototype.forEach.call(arguments, function(value){
+        sum += value;   //работает со строками и числами
+    });
+    console.log(sum);
+}
+summ(1, 2, 3, 5, 10);
+
+function sum(...values) {
+    console.log(values instanceof Array);
+    let sum = 0;
+    values.forEach(function(value) {
+        sum += value;
+    });
+    console.log(sum);
+}
+sum(1, 5, 3, 2);
+
+function sum2(...values) {
+    console.log(values.reduce(function(prevValue, currentValue){
+        return prevValue + currentValue;
+    }));
 }
 
-sum(1, 3, 5);
+sum2(1, 2, 3, 4);
