@@ -36,7 +36,7 @@ var Task2 = function () {
     _createClass(Task2, [{
         key: "complete",
         value: function complete() {
-            this._done = true;
+            this.done = true;
             console.log("\u0417\u0430\u0434\u0430\u0447\u0430 \"" + this.title + "\" \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0430");
         }
 
@@ -46,6 +46,13 @@ var Task2 = function () {
         key: "done",
         get: function get() {
             return this._done === true ? 'выполненно' : 'не выполненно';
+        },
+        set: function set(value) {
+            if (value !== undefined && typeof value === 'boolean') {
+                this._done = value;
+            } else {
+                console.error("Ошибка - укажите true/false");
+            }
         }
     }], [{
         key: "getDefaultTitle",

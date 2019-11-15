@@ -25,8 +25,17 @@ class Task2 {
         return this._done === true ? 'выполненно' : 'не выполненно';
     }
 
+    set done(value) {
+        if (value !== undefined && typeof value === 'boolean') {
+            this._done = value;
+        }
+        else {
+            console.error("Ошибка - укажите true/false");
+        }
+    }
+
     complete() {
-        this._done = true;
+        this.done = true;
         console.log(`Задача "${this.title}" выполнена`);
     }
 
