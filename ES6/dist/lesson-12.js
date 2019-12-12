@@ -43,6 +43,19 @@ var getPerson = function getPerson() {
     };
 };
 
+var getPerson2 = function getPerson2() {
+    return { name: "Romich" };
+};
+
+(function () {
+    console.log('LIFE');
+})();
+
+//strelochnaya function
+(function () {
+    return console.log('LIFE 2');
+})();
+
 console.log(add(2, 5));
 console.log(typeof add2 === 'undefined' ? 'undefined' : _typeof(add2));
 console.log(add2(5, 15));
@@ -52,3 +65,36 @@ console.log(giveMeAnswer());
 log();
 console.log(multiply(2, 3));
 console.log(getPerson());
+console.log(getPerson2());
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var sum = 0;
+
+numbers.forEach(function (num) {
+    sum += num;
+});
+
+console.log(sum);
+
+sum = 0;
+
+numbers.forEach(function (num) {
+    return sum += num;
+});
+
+//перебирает каждый элемент массива
+var squared = numbers.map(function (n) {
+    return n * n;
+});
+
+console.log(sum);
+console.log(squared);
+
+var person = {
+    name: "Bob",
+    greet: function greet() {
+        console.log("Hello my name is " + this.name);
+        console.log(this);
+    }
+};
+person.greet();

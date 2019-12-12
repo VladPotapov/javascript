@@ -33,6 +33,15 @@ let getPerson = function() {
     };
 };
 
+let getPerson2 = () => ({name: "Romich" });
+
+(function(){
+    console.log('LIFE');
+})();
+
+//strelochnaya function
+(() => console.log('LIFE 2'))();
+
 console.log(add(2, 5));
 console.log(typeof add2);
 console.log(add2(5, 15));
@@ -42,3 +51,32 @@ console.log(giveMeAnswer());
 log();
 console.log(multiply(2, 3));
 console.log(getPerson());
+console.log(getPerson2());
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let sum = 0;
+
+numbers.forEach(function(num){
+    sum += num;
+});
+
+console.log(sum);
+
+sum = 0;
+
+numbers.forEach(num => sum += num);
+
+//перебирает каждый элемент массива
+let squared = numbers.map(n => n * n);
+
+console.log(sum);
+console.log(squared);
+
+let person = {
+    name: "Bob",
+    greet: function(){
+        console.log("Hello my name is " + this.name);
+        console.log(this);
+    }
+}
+person.greet();
