@@ -78,5 +78,32 @@ let person = {
         console.log("Hello my name is " + this.name);
         console.log(this);
     }
-}
+};
+
+//ES5
+let person2 = {
+    name: "Djon",
+    greet: function() {
+        var that = this;
+        window.setTimeout(function(){
+            console.log("I is " + that.name);
+            console.log(this);
+            console.log(that);
+        }, 2000);
+    }
+};
+
+//ES6
+let person3 = {
+    name: "Maks",
+    greet: function() {
+        setTimeout(() => {
+            console.log("My name is " + this.name);
+            console.log(this);
+        });
+    }
+};
+
 person.greet();
+person2.greet();
+person3.greet();

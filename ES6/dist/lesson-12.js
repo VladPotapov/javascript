@@ -97,4 +97,33 @@ var person = {
         console.log(this);
     }
 };
+
+//ES5
+var person2 = {
+    name: "Djon",
+    greet: function greet() {
+        var that = this;
+        window.setTimeout(function () {
+            console.log("I is " + that.name);
+            console.log(this);
+            console.log(that);
+        }, 2000);
+    }
+};
+
+//ES6
+var person3 = {
+    name: "Maks",
+    greet: function greet() {
+        var _this = this;
+
+        setTimeout(function () {
+            console.log("My name is " + _this.name);
+            console.log(_this);
+        });
+    }
+};
+
 person.greet();
+person2.greet();
+person3.greet();
