@@ -73,4 +73,50 @@ function ink_dik() {
 
 }
 
-ink_dik();
+function plus_minus() {
+    var x = 10;
+    x = x + 5;
+    x += 5;
+    x -= 9;
+    var score = 10;
+    score += 7;
+    score -= 3;
+    x = 5;
+    var y = x + 4;
+    var z = 2;
+    z *= y + 1; // = z * (y + x)
+    console.log(z);
+}
+
+function myStr() {
+    var myString = "моя крутая строка на js!!!";
+    myString += " Я самый крутой прогер";
+
+    var myThing = 5;
+    myThing = "теперь это строка";
+
+    var num = 9;
+    var str = "9";
+    var num2 = num + num;
+    var str2 = str + str;
+    var num3 = 0;
+    num3 += str2;
+    
+    var hello = "Привет, ";
+    var name = "Лера";
+    hello += name;
+    console.log(num2 + " : " + str2 + " : " + num3 + "\n" + hello);
+}
+
+function len() {
+    var str = "суперДлиннаяСтрокаНаЯзыкеПрограммирования";
+    var strLen = str.length;
+    document.write(str);
+    document.write("<br>");
+    for(var i = strLen - 1; i >= 0; i--) {
+        document.write(str[i]);
+    }
+    console.log(strLen);
+}
+
+len();
