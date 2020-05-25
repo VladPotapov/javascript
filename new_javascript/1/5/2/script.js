@@ -28,13 +28,13 @@ n3 = number(5, 3);
 n4 = number(2, 5);
 n5 = number2(3, 5);
 
+//arr1 == arr2 = false
+arr1 = [];
+arr2 = [];
+
 //объекты, массивы, функции сравниваются по ссылке
-function proverka() {
-    //n1 == n2 true
-    //n1 == n3 true
-    //n1 == n4 false
-    //n1 == n5 true
-    if(n1 == n5) {
+function proverka(x, y) {
+    if(x == y) {
         console.log(true);
     }
     else {
@@ -42,14 +42,11 @@ function proverka() {
     }
 }
 
-proverka();
+//proverka(13, "13"); true
+//proverka(null, undefined); true
 
-function proverka2() {
-    //n1 == n2 true
-    //n1 == n3 true
-    //n1 == n4 false
-    //n1 == n5 true
-    if(n1 === n5) {
+function proverka2(x, y) {
+    if(x === y) {
         console.log(true);
     }
     else {
@@ -57,4 +54,5 @@ function proverka2() {
     }
 }
 
-proverka2();
+//proverka2(15, "15"); false
+//proverka2(null, undefined); false

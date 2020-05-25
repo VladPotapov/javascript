@@ -119,4 +119,45 @@ function len() {
     console.log(strLen);
 }
 
-len();
+var java = "Java";
+var script = "Script";
+var javascript = java + script;
+console.log(javascript);
+console.log(javascript.length);
+
+function cipher() {
+    var codeWord1 = "Обернись";
+    var codeWord2 = "Неужели";
+    var codeWord3 = "Огурцы";
+    var codeWord4 = "Липкие";
+    var codeWord5 = "?!";
+    var code = codeWord1[1] + codeWord2[1] + codeWord3[1] + codeWord4[1] + codeWord5[1];
+    console.log(code);
+}
+
+function str_slice(x, y) {
+    var str = "Это очень длинная строка, которая возможно никогда не кончится";
+    console.log(str.slice(x, y) + '...');   //Это о...
+}
+
+//текст большими буквами
+function str_upper(str) {
+    console.log(str.toUpperCase());
+}
+
+//текст маленькими буквами
+function str_lower(str) {
+    console.log(str.toLowerCase());
+}
+
+function title(str) {
+    //выводет текст с заглавной буквы
+    console.log(str[0].toUpperCase()+str.slice(1, str.length).toLowerCase());
+}
+
+function str_title(str) {
+    strLower = str.toLowerCase();
+    strUpper = strLower[0].toUpperCase();
+    text = strUpper + strLower.slice(1);
+    console.log(text);
+}
