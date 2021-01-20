@@ -101,7 +101,7 @@ function myStr() {
     var str2 = str + str;
     var num3 = 0;
     num3 += str2;
-    
+
     var hello = "Привет, ";
     var name = "Лера";
     hello += name;
@@ -113,7 +113,7 @@ function len() {
     var strLen = str.length;
     document.write(str);
     document.write("<br>");
-    for(var i = strLen - 1; i >= 0; i--) {
+    for (var i = strLen - 1; i >= 0; i--) {
         document.write(str[i]);
     }
     console.log(strLen);
@@ -152,7 +152,7 @@ function str_lower(str) {
 
 function title(str) {
     //выводет текст с заглавной буквы
-    console.log(str[0].toUpperCase()+str.slice(1, str.length).toLowerCase());
+    console.log(str[0].toUpperCase() + str.slice(1, str.length).toLowerCase());
 }
 
 function str_title(str) {
@@ -161,3 +161,15 @@ function str_title(str) {
     text = strUpper + strLower.slice(1);
     console.log(text);
 }
+
+function str_title2() {
+    var sillyString = "эЙ Как ДеЛа";
+    var str = sillyString[0].toUpperCase() + sillyString.toLowerCase().slice(1);
+    console.log(str);
+}
+
+function jsIsCool() {
+    var javascriptIsCool = true;
+    document.write(javascriptIsCool);
+}
+
