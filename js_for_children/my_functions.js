@@ -1,4 +1,4 @@
-function vivod(obj) {
-    document.write(obj);
-    console.log(obj);
+function vivod(name) {
+    document.write(name);
+    console.log(name);
 }
