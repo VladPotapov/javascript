@@ -45,3 +45,58 @@ function hello_user(name) {
         return "Привет незнакомец";
     }
 }
+
+function zoo(arr, name) {
+    if (arr.indexOf(name) == 0) {
+        return name.repeat(3);
+    }
+    else {
+        return "а это точно домашнее животное?";
+    }
+}
+
+//while
+function counted() {
+    var sheepCounted = 0;
+    while (sheepCounted < 10) {
+        console.log("посчитанно овец: " + sheepCounted + "!");
+        sheepCounted++;
+    }
+    console.log("хррррррр ням ням ням");
+}
+
+//for
+function for_sheep (n) {
+    var text = " sheep ";
+    for (var i = 0; i < n; i++) {
+        document.write(text.repeat(i));
+        document.write("<br>");
+    }
+}
+
+function my_zoo(arr) {
+    for(var i = 0; i < arr.length; i++) {
+        console.log("у меня есть: " + arr[i] + ".");
+    }
+}
+
+function name_length2(name) {
+    let n = 1;
+    for(var i = 0; i < name.length; i++) {
+        console.log("буква " + n + " = " + name[i]);
+        n++;
+    }
+}
+
+function stepeni(n) {
+    for(var i = n; i < 10000; i *= 2) {
+        console.log(i);
+    }
+}
+
+function stepeni_while(n) {
+    while(n < 10000) {
+        console.log(n);
+        n *= 2;
+    }
+}
