@@ -100,3 +100,27 @@ function stepeni_while(n) {
         n *= 2;
     }
 }
+
+function update_zoo(arr) {
+    for(var i = 0; i < arr.length; i++) {
+        arr[i] += " прекрасное животное";
+    }
+    for(var j = 0; j < arr.length; j++) {
+        console.log(arr[j]);
+    }
+}
+
+function random_string() {
+    var number_of_words = parseInt((Math.random() * 5) + 1);
+    var number_of_letters = parseInt((Math.random() * 10) + 1);
+    var alphabeta = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+    var text = "";
+    for(var i = 0; i < number_of_words; i++) {
+        for(var y = 0; y < number_of_letters; y++) {
+            var index = Math.floor(Math.random() * alphabeta.length);
+            text += alphabeta[index];
+        }
+        text += " ";
+    }
+    return text;
+}
