@@ -124,3 +124,41 @@ function random_string() {
     }
     return text;
 }
+
+function scrambler(text) {
+    var cipher = ['0', '1', '2', '3', '4', '5', '6', '8', '9'];
+    var new_text = "";
+    for(var i = 0; i < text.length; i++) {
+        if(text[i].toLowerCase() == "о") {
+            new_text += cipher[0];
+        }
+        else if(text[i].toLowerCase() == "л") {
+            new_text += cipher[1];
+        }
+        else if(text[i].toLowerCase() == "г") {
+            new_text += cipher[2];
+        }
+        else if(text[i].toLowerCase() == "з") {
+            new_text += cipher[3];
+        }
+        else if(text[i].toLowerCase() == "ч") {
+            new_text += cipher[4];
+        }
+        else if(text[i].toLowerCase() == "б") {
+            new_text += cipher[5];
+        }
+        else if(text[i].toLowerCase() == "с") {
+            new_text += cipher[6];
+        }
+        else if(text[i].toLowerCase() == "в") {
+            new_text += cipher[7];
+        }
+        else if(text[i].toLowerCase() == "д") {
+            new_text += cipher[8];
+        }
+        else {
+            new_text += text[i];
+        }
+    }
+    return new_text;
+}
