@@ -1,15 +1,42 @@
 //игра виселица 1.0
-words = [
-    "домовой",
-    "царство",
-    "талант",
-    "мурзилка",
-    "Вилла",
-    "утюг",
-    "велосипед"
-]
+let words = [
+    'программа',
+    'марка',
+    'очки',
+    'макака',
+    'тачка',
+    'земля'
+];
 
 function gallows(arr) {
-    var word = words[Math.floor(Math.random() * arr.length)];
-    return word;
+    let word = arr[Math.floor(Math.random() * words.length)];
+
+    let answerArray = [];
+    for(var i = 0; i < word.length; i++) {
+        answerArray[i] = "_";
+    }
+
+    let remainingLetters = word.length;
+    while(remainingLetters > 0) {
+        alert(answerArray.join(" "));
+
+        let quess = prompt("Введите букву или нажмите отмена для выхода из игры");
+        if(quess === null) break;
+        else if(quess.length !== 1) {
+            alert("введите только 1 букву");
+        }
+        else {
+            for(let j = 0; j < word.length; j++) {
+                if(quess === word[j]) {
+                    answerArray[j] = quess;
+                    remainingLetters--;
+                }
+            }
+        }
+    }
+    if(remainingLetters == 0) {
+        alert("Поздравляю ты победил");
+    }
+    else alert("Ты проиграл");
+    alert("было загадано слово " + word);
 }
