@@ -1,11 +1,17 @@
-//игра виселица 1.0
+//игра виселица 1.1
 let words = [
     'программа',
     'марка',
     'очки',
     'макака',
     'тачка',
-    'земля'
+    'земля',
+    'змея',
+    'экватор',
+    'трактор',
+    'попугай',
+    'телевизор',
+    'работа'
 ];
 
 function gallows(arr) {
@@ -17,7 +23,9 @@ function gallows(arr) {
     }
 
     let remainingLetters = word.length;
-    while(remainingLetters > 0) {
+    //попытка
+    let attempt = 0;
+    while(remainingLetters > 0 && attempt < 7) {
         alert(answerArray.join(" "));
 
         let quess = prompt("Введите букву или нажмите отмена для выхода из игры");
@@ -26,17 +34,22 @@ function gallows(arr) {
             alert("введите только 1 букву");
         }
         else {
+            if(word.indexOf(quess) == -1) {
+                attempt++;
+            }
             for(let j = 0; j < word.length; j++) {
-                if(quess === word[j]) {
-                    answerArray[j] = quess;
-                    remainingLetters--;
+                if(quess.toLowerCase() === word[j]) {
+                    if(answerArray[j] == "_") {
+                        answerArray[j] = quess;
+                        remainingLetters--;
+                    }
                 }
             }
         }
     }
     if(remainingLetters == 0) {
-        alert("Поздравляю ты победил");
+        alert("Поздравляю ты победил\n использованно попыток " + attempt);
     }
-    else alert("Ты проиграл");
+    else alert("Ты проиграл\n использованно все " + attempt + " попыток");
     alert("было загадано слово " + word);
 }
