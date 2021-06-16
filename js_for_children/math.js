@@ -46,20 +46,24 @@ function arakul(arr) {
     }
 }
 
-// дразнилки
-function draznilki() {
+// дразнилки версия 2.0
+let pickRandomWord = function(words) {
+    return words[Math.floor(Math.random() * words.length)];
+};
+let generateRandomInsulte = function() {
     var randomBodyParts = ["глаз", "нос", "череп"];
     var randomAdjectives = ["вонючая", "унылая", "дурацкая"];
     var randomWords = ["муха", "выдра", "дубина", "мартышка", "крыса"];
-    // выбор части тела
-    var randomBodyPart = randomBodyParts[Math.floor(Math.random() * randomBodyParts.length)];
-    // выбор прилагательного
-    var randomAdjective = randomAdjectives[Math.floor(Math.random() * randomAdjectives.length)];
-    // выбор слова
-    var randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+    var randomString = "У тебя " 
+    + pickRandomWord(randomBodyParts) 
+    + " словно " + pickRandomWord(randomAdjectives) 
+    + " " + pickRandomWord(randomWords) 
+    + "!!!";
+    return randomString;
+};
+function draznilki() {
     // склейка
-    var randomInsult = "У тебя " + randomBodyPart + " словно " + randomAdjective + " " + randomWord + "!!!";
-    document.write(randomInsult);
+    document.write(generateRandomInsulte());
 }
 
 function draznilki2() {

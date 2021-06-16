@@ -25,3 +25,10 @@ let plus = function(num) {
 let double = function(number) {
     return number * 2;
 };
+
+let numLetter = function(name, number) {
+    if(name.length < number) {
+        return;
+    }
+    return number + "буква твоего имени " + name[number - 1];
+};
