@@ -13,7 +13,7 @@ let words = [
     'телевизор',
     'работа'
 ];
-let attempt = 0;
+attempt = 0;
 
 function pickWord(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -64,21 +64,18 @@ function showAnswerAndCongratulatePlayer(arr) {
 let word = pickWord(words);
 let answerArray = setupAnswerArray(word);
 let remainingLetters = word.length;
-
-function game() {
-    while(remainingLetters > 0 && attempt < 7) {
-        showPlayerProgress(answerArray);
-        let quess = getGuess(word);
-        if(quess === null) {
-            break;
-        }
-        else if(quess.length !== 1) {
-            alert("Введите только 1 букву");
-        }
-        else {
-            let correctGuesses = updateGameState(quess, word, answerArray);
-            remainingLetters -= correctGuesses;
-        }
+while(remainingLetters > 0 && attempt < 7) {
+    showPlayerProgress(answerArray);
+    let quess = getGuess(word);
+    if(quess === null) {
+        break;
     }
-    showAnswerAndCongratulatePlayer(answerArray);
+    else if(quess.length !== 1) {
+        alert("Введите только 1 букву");
+    }
+    else {
+        let correctGuesses = updateGameState(quess, word, answerArray);
+        remainingLetters -= correctGuesses;
+    }
 }
+showAnswerAndCongratulatePlayer(answerArray);

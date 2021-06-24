@@ -32,3 +32,33 @@ let numLetter = function(name, number) {
     }
     return number + "буква твоего имени " + name[number - 1];
 };
+
+let medalForScore = function(score) {
+    if(score < 3) {
+        return "бронзавая медаль";
+    }
+    if(score < 7) {
+        return "серебрянная медаль";
+    }
+    return "золотая медаль";
+};
+
+function multiply(n1, n2) {
+    return n1 * n2;
+}
+
+function add(elem1, elem2) {
+    return elem1 + elem2;
+}
+
+function areArraysSame(arr1, arr2) {
+    flag = true;
+    if(arr1.length != arr2.length) return false;
+    for(let i = 0; i < arr1.length; i++) {
+        if(arr1[i] != arr2[i]) {
+            flag = !flag;
+            return flag;
+        }
+    }
+    return flag;
+}
